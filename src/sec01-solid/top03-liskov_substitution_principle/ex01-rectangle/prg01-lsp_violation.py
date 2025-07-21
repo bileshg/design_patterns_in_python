@@ -46,4 +46,16 @@ def use_it(rectangle: Rectangle):
     expected = int(w * 10)
     print(f'Expected an area of {expected}, got {rectangle.area}')
 
-# break the lsp by defining a Square as a specific type of Rectangle, while the properties should be handled differently
+# Violates LSP by defining a Square as a specific type of Rectangle,
+# while the properties are handled differently
+
+def driver():
+    r = Rectangle(5, 10)
+    use_it(r)
+
+    s = Square(5)
+    use_it(s)  # This will not behave as expected due to the overridden setters
+
+if __name__ == "__main__":
+    driver()
+    

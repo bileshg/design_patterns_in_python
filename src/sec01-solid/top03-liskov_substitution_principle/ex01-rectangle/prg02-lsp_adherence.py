@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Shape(metaclass=ABCMeta):
+class Shape(ABC):
     """Interface for shapes"""
 
     @abstractmethod
@@ -47,43 +47,62 @@ class Rectangle(Shape):
 
 class Square(Shape):
     """Provides the structure for a square"""
-    def __init__(self, size: float):
-        self._size = size
+    def __init__(self, side: float):
+        self._side = side
 
     def __str__(self) -> str:
         """Custom string representation to show the dimensions of the square"""
-        return f'Size: {self._size}'
+        return f'side: {self._side}'
 
     def area(self) -> float:
         """Calculates the area of the square"""
-        return self._size ** 2
+        return self._side ** 2
 
     @property
-    def size(self) -> float:
-        """Getter of the size property"""
-        return self._size
+    def side(self) -> float:
+        """Getter of the side property"""
+        return self._side
 
-    @size.setter
-    def size(self, value: float) -> None:
-        """Setter of the size property"""
-        self._size = value
+    @side.setter
+    def side(self, value: float) -> None:
+        """Setter of the side property"""
+        self._side = value
 
     @property
     def width(self) -> float:
         """Getter of the width property"""
-        return self._size
+        return self._side
 
     @width.setter
     def width(self, value: float) -> None:
         """Setter of the width property"""
-        self._size = value
+        self._side = value
 
     @property
     def height(self) -> float:
         """Getter of the height property"""
-        return self._size
+        return self._side
 
     @height.setter
     def height(self, value: float) -> None:
         """Setter of the height property"""
-        self._size = value
+        self._side = value
+
+
+def driver():
+    width, height = 2, 3
+    rectangle = Rectangle(width=width, height=height)
+    print(f'Expected an area of {width * height}, got {rectangle.area()}')
+
+    rectangle.width = 6
+    print(f'Expected an area of {rectangle.width * height}, got {rectangle.area()}')
+
+    side = 5
+    square = Square(side=side)
+    print(f'Expected an area of {side**2}, got {square.area()}')
+    square.side = 11
+    print(f'Expected an area of {square.side**2}, got {square.area()}')
+
+
+if __name__ == "__main__":
+    driver()

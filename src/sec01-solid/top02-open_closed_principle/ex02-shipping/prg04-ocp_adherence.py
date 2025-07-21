@@ -1,4 +1,4 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 class Order:
     """Enables order creation"""
@@ -7,7 +7,7 @@ class Order:
         self.distance = distance
 
 
-class ShippingStrategy(metaclass=ABCMeta):
+class ShippingStrategy(ABC):
     """Interface for shipping strategies"""
     @abstractmethod
     def calculate_cost(self, order) -> float:

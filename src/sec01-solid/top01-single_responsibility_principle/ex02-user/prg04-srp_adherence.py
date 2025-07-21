@@ -1,4 +1,4 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
 class User:
@@ -39,7 +39,7 @@ class User:
         return self._phone_number
 
 
-class SenderInterface(metaclass=ABCMeta):
+class SenderInterface(ABC):
     """
     Interface to send messages. Each implementation should represent a new communication medium.
     """

@@ -1,5 +1,5 @@
 from enum import Enum
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from typing import Any
 
 
@@ -22,7 +22,7 @@ class Product:
         self.color = color
         self.size = size
 
-class Specification(metaclass=ABCMeta):
+class Specification(ABC):
     """Interface for specifications that must be satisfied"""
     @abstractmethod
     def is_satisfied(self, item: Any) -> bool:
@@ -63,7 +63,7 @@ class SizeSpecification(Specification):
         """Validate if the defined size matches the size of the item"""
         return item.size == self.size
 
-class FilterInterface(metaclass=ABCMeta):
+class FilterInterface(ABC):
     """Interface for filters"""
 
     @staticmethod

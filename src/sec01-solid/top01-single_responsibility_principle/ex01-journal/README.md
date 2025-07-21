@@ -1,6 +1,6 @@
 ## Note on the Design
 
-This example demonstrates the **Single Responsibility Principle (SRP)** using a simple journal application. At first glance, it might seem that the implementation in `srp_violation.py`—which combines responsibilities—would reduce code complexity. After all, we don't want to create extra files and classes just to keep a personal journal!
+This example demonstrates the **Single Responsibility Principle (SRP)** using a simple journal application. At first glance, it might seem that the implementation in `prg01-srp_violation.py`—which combines responsibilities—would reduce code complexity. After all, we don't want to create extra files and classes just to keep a personal journal!
 
 However, adhering to SRP, even in simple cases, provides several important benefits:
 

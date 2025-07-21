@@ -1,3 +1,6 @@
+import pathlib
+
+
 class Journal:
     """
     A simple class to save and retrieve journal entries.
@@ -43,7 +46,7 @@ class PersistenceManager:
             f.write(content)
 
 
-if __name__ == "__main__":
+def driver():
     # make a journal
     j = Journal()
     j.add_entry("Dear diary...")
@@ -51,9 +54,25 @@ if __name__ == "__main__":
     print(f"Journal entries:\n{j}\n")
 
     # write the journal to a file
-    file = "./journal.txt"
-    PersistenceManager.save_to_file(content=str(j), filename=file)
+    # **Project Root**
+    #   > src
+    #       > sec01-solid
+    #           > top01-single_responsibility_principle
+    #               > ex01-journal
+    #                   > **This File**
+    #   > tmp
+    #       > journal.txt
+    filepath = (
+        pathlib.Path(__file__).parent.parent.parent.parent.parent
+        / "tmp"
+        / "journal.txt"
+    )
+    PersistenceManager.save_to_file(content=str(j), filename=filepath.as_posix())
 
     # verify the entries by printing them to the console
-    with open(file) as fh:
+    with open(filepath) as fh:
         print(fh.read())
+
+
+if __name__ == "__main__":
+    driver()

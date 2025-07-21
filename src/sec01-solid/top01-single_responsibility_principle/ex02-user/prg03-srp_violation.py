@@ -13,10 +13,9 @@ class User:
     def get_phone_number(self):
         return self.phone_number
 
-    # break SRP by using the User class to both create users and contact them
+    # Violates SRP by using the User class to both create users and contact them
     def send_email(self, message: str):
         print(f"Sending email to {self.username} at address {self.email}: {message}")
 
     def send_sms(self, message: str):
         print(f"Sending SMS to {self.phone_number}: {message}")
-

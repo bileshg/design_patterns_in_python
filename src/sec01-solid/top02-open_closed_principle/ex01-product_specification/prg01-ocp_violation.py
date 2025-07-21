@@ -21,14 +21,16 @@ class Product:
 
 
 class ProductFilter:
-    # break ocp by hardcoding all options to filter products
+    # Violates ocp by hardcoding all options to filter products
     def filter_by_color(self, products, color):
         for p in products:
-            if p.color == color: yield p
+            if p.color == color:
+                yield p
 
     def filter_by_size(self, products, size):
         for p in products:
-            if p.size == size: yield p
+            if p.size == size:
+                yield p
 
     def filter_by_size_and_color(self, products, size, color):
         for p in products:

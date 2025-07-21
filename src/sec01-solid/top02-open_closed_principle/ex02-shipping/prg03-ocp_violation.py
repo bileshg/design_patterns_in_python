@@ -7,8 +7,8 @@ class ShippingCostCalculator:
         self.order = order
         self.shipping_method = shipping_method
 
-    # break ocp by adding the defining the cost calculation hardcoded in the class. Adding new shipping therefore
-    # require changes to this class.
+    # Violates OCP by defining the cost calculation hardcoded in the class.
+    # Adding new shipping methods therefore requires changes to this class.
     def calculate_shipping_cost(self):
         if self.shipping_method == 'standard':
             return self.order.weight * 0.5 + self.order.distance * 0.1

@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Machine(metaclass=ABCMeta):
+class Machine(ABC):
     @abstractmethod
     def print(self, document):
         pass
@@ -38,4 +38,5 @@ class OldFashionedPrinter(Machine):
         """Not supported!"""
         raise NotImplementedError('Printer cannot scan!')
 
-# break the isp by using an interface for OldFashionedPrinter when it does not support all functionalities from Machine
+# Violates the ISP by using an interface for OldFashionedPrinter
+# when it does not support all functionalities from Machine

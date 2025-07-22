@@ -33,11 +33,11 @@ class Relationships(RelationshipBrowser):  # Low-level
 
 
 class Research:
-    # breaks the dip by depending directly on the low level module 'relationships'
+    # Violates the dip by depending directly on the low level module 'relationships'
 
     def __init__(self, relationships):
         # High-level: find all of John's children
         relations = relationships.relations
         for r in relations:
-            if r[0].name == 'John' and r[1] == Relationship.PARENT:
-                print(f'John has a child called {r[2].name}.')
+            if r[0].name == "John" and r[1] == Relationship.PARENT:
+                print(f"John has a child called {r[2].name}.")

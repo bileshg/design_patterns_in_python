@@ -13,5 +13,5 @@ class NotificationService:
         except Exception as e:
             print(f"Error sending notification to '{recipient}': {str(e)}")
 
-# violates dip by directly coupling the high-level NotificationService class to the concrete low-level EmailService
-# class, instead of depending on abstractions.
+# Violates DIP by directly coupling the high-level NotificationService class 
+# to the concrete low-level EmailService class, instead of depending on abstractions.

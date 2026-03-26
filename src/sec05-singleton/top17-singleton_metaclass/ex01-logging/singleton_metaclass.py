@@ -1,5 +1,6 @@
 class SingletonMeta(type):
-    """ Metaclass that creates a Singleton base type when called. """
+    """Metaclass that creates a Singleton base type when called."""
+
     _instances = {}
 
     def __call__(cls, *args, **kwargs):

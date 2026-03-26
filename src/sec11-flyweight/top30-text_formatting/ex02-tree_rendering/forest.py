@@ -1,4 +1,5 @@
 from typing import Dict, List
+
 from trees import Tree, TreeType
 
 
@@ -8,7 +9,7 @@ class Forest:
         self.tree_types: Dict[str, TreeType] = {}
 
     def _get_or_create_tree_type(self, name: str, color: str, texture: str) -> TreeType:
-        key = f'{name}_{color}_{texture}'
+        key = f"{name}_{color}_{texture}"
         if key not in self.tree_types:
             self.tree_types[key] = TreeType(name, color, texture)
         return self.tree_types[key]

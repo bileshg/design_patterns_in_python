@@ -4,6 +4,7 @@ from person import Person
 # note that this implementation of a builder with sub-builders breaks the ocp
 class PersonBuilder:
     """Builder for Person objects by utilising sub-builders"""
+
     def __init__(self, person: Person | None = None):
         if person is None:
             self.person = Person()
@@ -25,6 +26,7 @@ class PersonBuilder:
 
 class PersonJobBuilder(PersonBuilder):
     """Sub-builder for living information of a Person"""
+
     def __init__(self, person):
         super().__init__(person)
 
@@ -56,4 +58,3 @@ class PersonAddressBuilder(PersonBuilder):
     def in_city(self, city: str):
         self.person.city = city
         return self
-

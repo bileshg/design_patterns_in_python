@@ -1,7 +1,6 @@
-from tasks import PrintTask
 from services import PrintService
+from tasks import PrintTask
 from workflow_mediator import WorkflowMediator
-
 
 if __name__ == "__main__":
     mediator = WorkflowMediator()

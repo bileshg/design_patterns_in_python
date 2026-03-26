@@ -11,7 +11,7 @@ class Neuron(Connectable):
         yield self
 
     def __str__(self):
-        return f'Neuron {self.name}, {len(self.inputs)} inputs, {len(self.outputs)} outputs'
+        return f"Neuron {self.name}, {len(self.inputs)} inputs, {len(self.outputs)} outputs"
 
 
 class NeuronLayer(list, Connectable):
@@ -19,7 +19,7 @@ class NeuronLayer(list, Connectable):
         super().__init__()
         self.name = name
         for x in range(0, count):
-            self.append(Neuron(f'{name}-{x}'))
+            self.append(Neuron(f"{name}-{x}"))
 
     def __str__(self):
-        return f'Layer {self.name} with {len(self)} neurons: {[str(neuron) for neuron in self]}'
+        return f"Layer {self.name} with {len(self)} neurons: {[str(neuron) for neuron in self]}"

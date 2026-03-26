@@ -1,7 +1,6 @@
-from square import Square
-from api import calculate_area
 from adapter import SquareToRectangleAdapter
-
+from api import calculate_area
+from square import Square
 
 if __name__ == "__main__":
     square = Square(side=11)

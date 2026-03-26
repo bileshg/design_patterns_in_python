@@ -1,5 +1,5 @@
-from game import Game
 from creature import Creature
+from game import Game
 
 
 class Goblin(Creature):
@@ -14,10 +14,15 @@ class Goblin(Creature):
         return f"defense: {self.defense}, attack: {self.attack}"
 
     def _king_bonus(self):
-        return sum([1 for creature in self.game.creatures if isinstance(creature, GoblinKing)])
+        return sum(
+            [1 for creature in self.game.creatures if isinstance(creature, GoblinKing)]
+        )
 
     def _goblin_comrade_bonus(self):
-        return sum([1 for creature in self.game.creatures if isinstance(creature, Goblin)]) - 1
+        return (
+            sum([1 for creature in self.game.creatures if isinstance(creature, Goblin)])
+            - 1
+        )
 
     @property
     def attack(self):

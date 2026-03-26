@@ -1,8 +1,7 @@
-from shapes import Triangle, Square, Circle
 from renderers import RasterRenderer, VectorRenderer
+from shapes import Circle, Square, Triangle
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     raster = RasterRenderer()
     vector = VectorRenderer()
 

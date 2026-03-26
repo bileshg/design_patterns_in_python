@@ -1,8 +1,7 @@
-from abc import ABCMeta
 from collections.abc import Iterable
 
 
-class Connectable(Iterable):#, metaclass=ABCMeta):
+class Connectable(Iterable):  # , metaclass=ABCMeta):
     def connect_to(self, other):
         if self == other:
             return

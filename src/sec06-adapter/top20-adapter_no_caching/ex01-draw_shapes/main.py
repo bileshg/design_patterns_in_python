@@ -1,6 +1,6 @@
 from drawing_system import DrawingSystem
-from shapes_api import Rectangle, Circle, Triangle
-from shape_adapters import RectangleAdapter, CircleAdapter, TriangleAdapter
+from shape_adapters import CircleAdapter, RectangleAdapter, TriangleAdapter
+from shapes_api import Circle, Rectangle, Triangle
 
 
 def main():

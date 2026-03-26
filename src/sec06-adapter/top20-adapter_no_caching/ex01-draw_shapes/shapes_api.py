@@ -1,5 +1,6 @@
 class Rectangle:
     """Api for rectangles"""
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -10,6 +11,7 @@ class Rectangle:
 
 class Circle:
     """Api for circles"""
+
     def __init__(self, radius):
         self.radius = radius
 
@@ -19,6 +21,7 @@ class Circle:
 
 class Triangle:
     """Api for triangles"""
+
     def __init__(self, base, height):
         self.base = base
         self.height = height

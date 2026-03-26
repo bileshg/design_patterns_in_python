@@ -6,16 +6,16 @@ from src.creational_patterns.singleton_pattern.singleton_metaclass import Single
 class DatabaseWithDeco:
     def __init__(self, x: int):
         self.x = x
-        print('Init your database')
+        print("Init your database")
 
 
 class DatabaseWithMeta(metaclass=SingletonMeta):
     def __init__(self, x: int):
         self.x = x
-        print('Init your database')
+        print("Init your database")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     # test for database with decorator
     d1 = DatabaseWithDeco(x=1)
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print(d2, d2.x)
     print(d1 == d2)
 
-    print(75*"-")
+    print(75 * "-")
 
     # test for database with metaclass
     d3 = DatabaseWithMeta(x=3)

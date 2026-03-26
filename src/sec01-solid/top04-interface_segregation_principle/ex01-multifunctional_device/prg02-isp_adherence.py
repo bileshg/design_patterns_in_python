@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 
 class Printer(ABC):
     """Interface for printers"""
+
     @abstractmethod
     def print(self, document: str):
         """Print the document content"""
@@ -11,6 +12,7 @@ class Printer(ABC):
 
 class Scanner(ABC):
     """Interface for scanners"""
+
     @abstractmethod
     def scan(self, document: str):
         """Scan the document"""
@@ -19,12 +21,14 @@ class Scanner(ABC):
 
 class MyPrinter(Printer):
     """Printer implementation"""
+
     def print(self, document):
         print(document)
 
 
 class Photocopier(Printer, Scanner):
     """Photocopier implementation"""
+
     def print(self, document):
         print(document)
 

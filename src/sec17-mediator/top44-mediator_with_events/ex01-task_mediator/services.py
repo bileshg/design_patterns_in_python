@@ -1,6 +1,6 @@
-from tasks import PrintTask
-from i_task import ITask
 from i_service import IService
+from i_task import ITask
+from tasks import PrintTask
 
 
 class PrintService(IService):

@@ -1,8 +1,9 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class TestingEnvironmentFactory(metaclass=ABCMeta):
+class TestingEnvironmentFactory(ABC):
     """Abstract factory for Testing envs"""
+
     @abstractmethod
     def create_database_connection(self):
         pass
@@ -10,4 +11,3 @@ class TestingEnvironmentFactory(metaclass=ABCMeta):
     @abstractmethod
     def create_mock_services(self):
         pass
-

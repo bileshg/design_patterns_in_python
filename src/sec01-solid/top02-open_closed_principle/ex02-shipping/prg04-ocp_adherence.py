@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 
+
 class Order:
     """Enables order creation"""
+
     def __init__(self, weight: float, distance: float):
         self.weight = weight
         self.distance = distance
@@ -9,6 +11,7 @@ class Order:
 
 class ShippingStrategy(ABC):
     """Interface for shipping strategies"""
+
     @abstractmethod
     def calculate_cost(self, order) -> float:
         pass
@@ -16,6 +19,7 @@ class ShippingStrategy(ABC):
 
 class StandardShipping(ShippingStrategy):
     """Implementation of ShippingStrategy for standard shipping"""
+
     def calculate_cost(self, order: Order) -> float:
         """Calculates the cost for an order for standard shipment"""
         # Standard shipping cost calculation logic
@@ -24,15 +28,18 @@ class StandardShipping(ShippingStrategy):
 
 class ExpressShipping(ShippingStrategy):
     """Implementation of ShippingStrategy for express shipping"""
+
     def calculate_cost(self, order: Order):
         """Calculates the cost for an order for express shipment"""
         # Express shipping cost calculation logic
         return order.weight * 0.8 + order.distance * 0.3
 
+
 class ShippingCostCalculator:
     """
     Calculator class which takes a certain shipping strategy to make the required calculations.
     """
+
     def __init__(self, strategy: ShippingStrategy):
         self.strategy = strategy
 
@@ -53,6 +60,7 @@ def driver():
     # print shipping costs for the order per shipping method
     print("Standard Shipping Cost:", standard_calculator.calculate_shipping_cost(order))
     print("Express Shipping Cost:", express_calculator.calculate_shipping_cost(order))
+
 
 if __name__ == "__main__":
     driver()

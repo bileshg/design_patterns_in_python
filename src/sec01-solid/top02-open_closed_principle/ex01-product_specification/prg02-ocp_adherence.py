@@ -1,5 +1,5 @@
-from enum import Enum
 from abc import ABC, abstractmethod
+from enum import Enum
 from typing import Any
 
 
@@ -17,13 +17,16 @@ class Size(Enum):
 
 class Product:
     """Defines a product"""
+
     def __init__(self, name, color, size):
         self.name = name
         self.color = color
         self.size = size
 
+
 class Specification(ABC):
     """Interface for specifications that must be satisfied"""
+
     @abstractmethod
     def is_satisfied(self, item: Any) -> bool:
         """Contains logic to validate the item"""
@@ -35,7 +38,8 @@ class Specification(ABC):
 
 
 class AndSpecification(Specification):
-    """"Specification implementation that allows to bind multiple specifications together that must all be satisfied"""
+    """ "Specification implementation that allows to bind multiple specifications together that must all be satisfied"""
+
     def __init__(self, *args):
         self.args = args
 
@@ -46,6 +50,7 @@ class AndSpecification(Specification):
 
 class ColorSpecification(Specification):
     """Color specification"""
+
     def __init__(self, color):
         self.color = color
 
@@ -56,12 +61,14 @@ class ColorSpecification(Specification):
 
 class SizeSpecification(Specification):
     """Size specification"""
+
     def __init__(self, size):
         self.size = size
 
     def is_satisfied(self, item) -> bool:
         """Validate if the defined size matches the size of the item"""
         return item.size == self.size
+
 
 class FilterInterface(ABC):
     """Interface for filters"""
@@ -82,26 +89,27 @@ class FilterSpec(FilterInterface):
 
 
 def driver():
-    pear = Product('Pear', Color.GREEN, Size.SMALL)
-    ball = Product('Ball', Color.GREEN, Size.MEDIUM)
-    palace = Product('Palace', Color.BLUE, Size.LARGE)
+    pear = Product("Pear", Color.GREEN, Size.SMALL)
+    ball = Product("Ball", Color.GREEN, Size.MEDIUM)
+    palace = Product("Palace", Color.BLUE, Size.LARGE)
     products = [pear, ball, palace]
 
     green = ColorSpecification(Color.GREEN)
     small = SizeSpecification(Size.SMALL)
     small_blue = small & ColorSpecification(Color.BLUE)
 
-    print('Green products (new):')
+    print("Green products (new):")
     for p in FilterSpec.filter(items=products, spec=green):
-        print(f' - {p.name} is green')
+        print(f" - {p.name} is green")
 
-    print('Small products:')
+    print("Small products:")
     for p in FilterSpec.filter(items=products, spec=small):
-        print(f' - {p.name} is small')
+        print(f" - {p.name} is small")
 
-    print('Small blue items:')
+    print("Small blue items:")
     for p in FilterSpec.filter(items=products, spec=small_blue):
-        print(f' - {p.name} is small and blue')
+        print(f" - {p.name} is small and blue")
+
 
 if __name__ == "__main__":
     driver()

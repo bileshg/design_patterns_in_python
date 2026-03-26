@@ -5,7 +5,9 @@ class TreeType:
         self.texture = texture
 
     def draw(self, x: int, y: int):
-        print(f'Drawing {self.name} tree at ({x}, {y}) with color {self.color} and texture {self.texture}')
+        print(
+            f"Drawing {self.name} tree at ({x}, {y}) with color {self.color} and texture {self.texture}"
+        )
 
 
 class Tree:

@@ -19,10 +19,14 @@ class AppConfig:
 
     def __str__(self):
         """Custom string representation."""
-        db_info = f"DB:\nhost: {self.host}, port: {self.port}, username: {self.username}, " \
-                  f"password: {self.password}, database_name: {self.database_name}"
-        api_info = f"API:\nbase_url: {self.base_url}, supported_methods: {self.supported_methods}, " \
-                   f"auth_token: {self.auth_token}"
+        db_info = (
+            f"DB:\nhost: {self.host}, port: {self.port}, username: {self.username}, "
+            f"password: {self.password}, database_name: {self.database_name}"
+        )
+        api_info = (
+            f"API:\nbase_url: {self.base_url}, supported_methods: {self.supported_methods}, "
+            f"auth_token: {self.auth_token}"
+        )
         return db_info + "\n" + api_info
 
     @staticmethod
@@ -33,6 +37,7 @@ class AppConfig:
 
 class AppConfigBuilder(metaclass=BuilderMeta):
     """Base builder for AppConfig."""
+
     ClassToBuild = AppConfig  # Reference to the Config class
 
     def __init__(self, config=None):

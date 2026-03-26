@@ -16,4 +16,5 @@ def sort_numbers(sorting_algorithm, nums):
     sorting_algorithm.sort(nums)
     return nums
 
+
 # break the lsp by requiring the sorting algorithms to follow the same structure without a shared base enforcing this

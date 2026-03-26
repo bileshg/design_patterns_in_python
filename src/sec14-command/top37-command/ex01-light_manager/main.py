@@ -1,7 +1,6 @@
-from light import Light
+from commands import LightOffCommand, LightOnCommand
 from invoker import RemoteControl
-from commands import LightOnCommand, LightOffCommand
-
+from light import Light
 
 if __name__ == "__main__":
     light = Light()

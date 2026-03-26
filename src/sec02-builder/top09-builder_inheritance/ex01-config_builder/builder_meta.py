@@ -11,8 +11,14 @@ class BuilderMeta(type):
         super().__init__(name, bases, clsdict)
 
         # retrieve the base builder class dynamically
-        base_builder_cls = next((base for base in bases if isinstance(base, BuilderMeta)), None)
+        base_builder_cls = next(
+            (base for base in bases if isinstance(base, BuilderMeta)), None
+        )
 
         # set a property for each sub-builder in the parent-builder class
         if base_builder_cls and cls is not base_builder_cls:
-            setattr(base_builder_cls, name.lower(), property(lambda self, cls=cls: cls(self.cls_to_build)))
+            setattr(
+                base_builder_cls,
+                name.lower(),
+                property(lambda self, cls=cls: cls(self.cls_to_build)),
+            )

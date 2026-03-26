@@ -57,5 +57,6 @@ class RemoteControlDevice:
         self.device.adjust_volume(20)
         self.device.turn_off()
 
+
 # Violates ISP by implementing functionalities in the interface
 # that do not necessarily hold for the implementations

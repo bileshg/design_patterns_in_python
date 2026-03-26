@@ -1,4 +1,4 @@
-from abc_factory import TestingEnvironmentFactory
+from .abc_factory import TestingEnvironmentFactory
 
 
 class EnvironmentFactorySelector:
@@ -9,6 +9,7 @@ class EnvironmentFactorySelector:
         def decorator(factory_class: TestingEnvironmentFactory):
             EnvironmentFactorySelector._factories[environment] = factory_class
             return factory_class
+
         return decorator
 
     @staticmethod
@@ -22,6 +23,7 @@ class EnvironmentFactorySelector:
 
 class RegisterEnvironment:
     """Decorator for Environment factory registration"""
+
     def __init__(self, environment: str):
         self.environment = environment
 

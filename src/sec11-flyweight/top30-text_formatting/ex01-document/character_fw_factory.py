@@ -6,7 +6,7 @@ class CharacterFlyweight:
         self.char = char
 
     def render(self, font_size: int):
-        print(f'Rendering character {self.char} at font size {font_size}')
+        print(f"Rendering character {self.char} at font size {font_size}")
 
 
 class CharacterFlyweightFactory:

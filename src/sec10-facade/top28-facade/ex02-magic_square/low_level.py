@@ -3,6 +3,7 @@ from random import randint
 
 class RowGenerator:
     """Generates a row of a given size to construct the square"""
+
     @staticmethod
     def generate(count):
         return [randint(1, 9) for x in range(count)]
@@ -10,6 +11,7 @@ class RowGenerator:
 
 class Splitter:
     """constructs a list of all rows, columns and diagonals"""
+
     @staticmethod
     def split(array):
         result = []
@@ -48,6 +50,7 @@ class Splitter:
 
 class Verifier:
     """Verifies if the sum of all rows, cols and diagonals is the same"""
+
     @staticmethod
     def verify(arrays):
         first = sum(arrays[0])

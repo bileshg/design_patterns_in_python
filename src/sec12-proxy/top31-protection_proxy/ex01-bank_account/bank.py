@@ -16,7 +16,9 @@ class BankAccount:
 
 
 class BankAccountProxy:
-    def __init__(self, bank_account: BankAccount, user: str, permissions: dict[str, bool]):
+    def __init__(
+        self, bank_account: BankAccount, user: str, permissions: dict[str, bool]
+    ):
         self.bank_account = bank_account
         self.user = user
         self.permissions = permissions

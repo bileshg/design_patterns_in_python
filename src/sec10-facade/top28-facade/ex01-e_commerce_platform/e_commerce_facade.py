@@ -1,4 +1,9 @@
-from platform_parts import OrderProcessor, PaymentGateway, InventoryManager, ShippingService
+from platform_parts import (
+    InventoryManager,
+    OrderProcessor,
+    PaymentGateway,
+    ShippingService,
+)
 
 
 class EcommerceFacade:
@@ -6,6 +11,7 @@ class EcommerceFacade:
     Provides a facade for the platform parts and provides them as a single whole to manage orders, payments,
     inventory and shipping services
     """
+
     def __init__(self):
         """Initialise all low level platform parts"""
         self.order_processor = OrderProcessor()
@@ -13,7 +19,13 @@ class EcommerceFacade:
         self.inventory_manager = InventoryManager()
         self.shipping_service = ShippingService()
 
-    def place_order(self, customer_id: int, items: list, payment_details: dict, shipping_address: str):
+    def place_order(
+        self,
+        customer_id: int,
+        items: list,
+        payment_details: dict,
+        shipping_address: str,
+    ):
         """
         Places an order if the items are in stock. Order placement includes payment processing, inventory updates
         and providing shipping

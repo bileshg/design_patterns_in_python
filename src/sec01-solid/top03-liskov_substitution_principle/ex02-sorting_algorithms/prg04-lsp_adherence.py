@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
-from typing import Optional
 from collections.abc import Sequence
+from typing import Optional
 
 
 class SortingAlgorithm(ABC):
     """Interface for sorting algorithms"""
+
     @abstractmethod
     def sort(self, nums: Sequence[int | float]) -> Sequence[int | float]:
         """Sorts the sequence"""
@@ -13,6 +14,7 @@ class SortingAlgorithm(ABC):
 
 class BubbleSort(SortingAlgorithm):
     """Bubble sort algorithm"""
+
     def sort(self, nums: Sequence[int | float]) -> Optional[Sequence[int | float]]:
         # Bubble sort logic
         pass
@@ -20,10 +22,10 @@ class BubbleSort(SortingAlgorithm):
 
 class QuickSort(SortingAlgorithm):
     """Quick sort algorithm"""
+
     def sort(self, nums: Sequence[int | float]) -> Optional[Sequence[int | float]]:
         # Quick sort logic
         pass
-
 
 
 def sort_numbers(sorting_algorithm: SortingAlgorithm, nums: Sequence[int | float]):
@@ -46,4 +48,3 @@ def driver():
 
 if __name__ == "__main__":
     driver()
-    

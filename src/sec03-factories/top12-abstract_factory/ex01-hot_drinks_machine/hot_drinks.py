@@ -1,19 +1,22 @@
-from abc import ABCMeta
+from abc import ABC
 
 
-class HotDrink(metaclass=ABCMeta):
+class HotDrink(ABC):
     """Interface for hot drinks"""
+
     def consume(self):
         pass
 
 
 class Tea(HotDrink):
     """Implementation for tea"""
+
     def consume(self):
-        print('This tea is nice but I\'d prefer it with milk')
+        print("This tea is nice but I'd prefer it with milk")
 
 
 class Coffee(HotDrink):
     """Implementation for coffee"""
+
     def consume(self):
-        print('This coffee is delicious')
+        print("This coffee is delicious")

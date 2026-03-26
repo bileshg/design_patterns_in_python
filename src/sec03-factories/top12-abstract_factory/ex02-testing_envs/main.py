@@ -1,7 +1,5 @@
-from env_factories import *
-from testing_client import TestingClient
-from env_selector import EnvironmentFactorySelector
-
+from .env_selector import EnvironmentFactorySelector
+from .testing_client import TestingClient
 
 if __name__ == "__main__":
     # Example usage, change this to "staging" or "production" for different environments

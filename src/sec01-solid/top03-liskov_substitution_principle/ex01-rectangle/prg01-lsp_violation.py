@@ -8,7 +8,7 @@ class Rectangle:
         return self._width * self._height
 
     def __str__(self):
-        return f'Width: {self.width}, height: {self.height}'
+        return f"Width: {self.width}, height: {self.height}"
 
     @property
     def width(self):
@@ -44,10 +44,12 @@ def use_it(rectangle: Rectangle):
     w = rectangle.width
     rectangle.height = 10  # unpleasant side effect
     expected = int(w * 10)
-    print(f'Expected an area of {expected}, got {rectangle.area}')
+    print(f"Expected an area of {expected}, got {rectangle.area}")
+
 
 # Violates LSP by defining a Square as a specific type of Rectangle,
 # while the properties are handled differently
+
 
 def driver():
     r = Rectangle(5, 10)
@@ -56,6 +58,6 @@ def driver():
     s = Square(5)
     use_it(s)  # This will not behave as expected due to the overridden setters
 
+
 if __name__ == "__main__":
     driver()
-    

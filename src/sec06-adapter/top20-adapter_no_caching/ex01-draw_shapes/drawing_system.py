@@ -3,6 +3,7 @@ from i_shape import IShape
 
 class DrawingSystem:
     """A system to draw all shapes following the IShape interface"""
+
     def __init__(self):
         self.shapes = []
 

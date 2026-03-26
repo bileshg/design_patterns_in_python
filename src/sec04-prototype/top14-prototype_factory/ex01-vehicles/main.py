@@ -1,6 +1,5 @@
-from vehicles import Car, Bike
 from proto_factory import VehiclePrototypeFactory
-
+from vehicles import Bike, Car
 
 if __name__ == "__main__":
     # registering prototype objects with the factory. Note that this approach allows for prototype definition per app
@@ -10,7 +9,9 @@ if __name__ == "__main__":
 
     # dynamically creating instances based on user input
     while True:
-        vehicle_type = input("Enter vehicle type (car/bike) or 'exit' to quit: ").lower()
+        vehicle_type = input(
+            "Enter vehicle type (car/bike) or 'exit' to quit: "
+        ).lower()
 
         if vehicle_type == "exit":
             break

@@ -12,13 +12,14 @@ class Shape(ABC):
 
 class Rectangle(Shape):
     """Provides the structure for a rectangle"""
+
     def __init__(self, width: float, height: float):
         self._width = width
         self._height = height
 
     def __str__(self) -> str:
         """Custom string representation to show the dimensions of the rectangle"""
-        return f'Width: {self._width}, Height: {self._height}'
+        return f"Width: {self._width}, Height: {self._height}"
 
     def area(self) -> float:
         """Calculates the area of the rectangle"""
@@ -47,16 +48,17 @@ class Rectangle(Shape):
 
 class Square(Shape):
     """Provides the structure for a square"""
+
     def __init__(self, side: float):
         self._side = side
 
     def __str__(self) -> str:
         """Custom string representation to show the dimensions of the square"""
-        return f'side: {self._side}'
+        return f"side: {self._side}"
 
     def area(self) -> float:
         """Calculates the area of the square"""
-        return self._side ** 2
+        return self._side**2
 
     @property
     def side(self) -> float:
@@ -92,16 +94,16 @@ class Square(Shape):
 def driver():
     width, height = 2, 3
     rectangle = Rectangle(width=width, height=height)
-    print(f'Expected an area of {width * height}, got {rectangle.area()}')
+    print(f"Expected an area of {width * height}, got {rectangle.area()}")
 
     rectangle.width = 6
-    print(f'Expected an area of {rectangle.width * height}, got {rectangle.area()}')
+    print(f"Expected an area of {rectangle.width * height}, got {rectangle.area()}")
 
     side = 5
     square = Square(side=side)
-    print(f'Expected an area of {side**2}, got {square.area()}')
+    print(f"Expected an area of {side**2}, got {square.area()}")
     square.side = 11
-    print(f'Expected an area of {square.side**2}, got {square.area()}')
+    print(f"Expected an area of {square.side**2}, got {square.area()}")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 class OrderProcessor:
     """Processes orders"""
+
     def create_order(self, customer_id: int, items: list):
         """Creates dummy order"""
         print(f"Order created for customer {customer_id} with items {items}")
@@ -12,6 +13,7 @@ class OrderProcessor:
 
 class PaymentGateway:
     """Provides a gateway for payments"""
+
     def process_payment(self, order_id: int, payment_details: dict):
         """Processes dummy payment"""
         print(f"Processing payment for order {order_id} with details {payment_details}")
@@ -39,6 +41,7 @@ class InventoryManager:
 
 class ShippingService:
     """Provides shipping services for orders"""
+
     def arrange_shipping(self, order_id: int, shipping_address: str):
         """Arranges shipping of an order"""
         print(f"Arranging shipping for order {order_id} to address {shipping_address}")

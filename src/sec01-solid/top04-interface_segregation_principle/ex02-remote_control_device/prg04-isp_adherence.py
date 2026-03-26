@@ -27,6 +27,7 @@ class Powerable(ABC):
 
 class ChannelChangeable(Powerable, ABC):
     """Interface for Powerable devices that can switch between channels"""
+
     @abstractmethod
     def change_channel(self, channel: int):
         """Change the channel on which the device currently operates"""
@@ -35,6 +36,7 @@ class ChannelChangeable(Powerable, ABC):
 
 class VolumeControllable(Powerable, ABC):
     """Interface for Powerable devices that can adjust volume levels"""
+
     @abstractmethod
     def adjust_volume(self, volume: int):
         """Change the volume which the device currently produces"""
@@ -43,6 +45,7 @@ class VolumeControllable(Powerable, ABC):
 
 class Command(ABC):
     """Interface for command structuring"""
+
     @abstractmethod
     def execute(self, on: Any):
         """Executes a command"""
@@ -51,6 +54,7 @@ class Command(ABC):
 
 class RemoteControl:
     """Implements the execution orchestration of the commands"""
+
     def __init__(self, device: Powerable):
         self.device = device
 
@@ -71,6 +75,7 @@ class RemoteControl:
 
 class MethodCommand(Command):
     """Class to execute commands on a object"""
+
     def __init__(self, method: str, *args, **kwargs):
         self.method = method
         self.args = args
@@ -83,6 +88,7 @@ class MethodCommand(Command):
 
 class TV(ChannelChangeable, VolumeControllable):
     """Allows for TV devices"""
+
     def turn_on(self):
         print("TV turned on")
 
@@ -98,6 +104,7 @@ class TV(ChannelChangeable, VolumeControllable):
 
 class Stereo(VolumeControllable):
     """Allows for Stereo devices"""
+
     def turn_on(self):
         print("Stereo turned on")
 
@@ -106,6 +113,7 @@ class Stereo(VolumeControllable):
 
     def adjust_volume(self, volume: int):
         print(f"Stereo volume adjusted to {volume}")
+
 
 if __name__ == "__main__":
 

@@ -6,7 +6,11 @@ def main():
 
     customer_id = 101
     items = ["item1", "item2", "item3"]
-    payment_details = {"card_number": "1234-5678-9012-3456", "expiry_date": "12/25", "cvv": "123"}
+    payment_details = {
+        "card_number": "1234-5678-9012-3456",
+        "expiry_date": "12/25",
+        "cvv": "123",
+    }
     shipping_address = "123 Main St, Anytown, USA"
 
     # Place an order

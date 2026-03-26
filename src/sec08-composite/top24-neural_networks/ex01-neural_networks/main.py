@@ -1,10 +1,9 @@
 from neurons import Neuron, NeuronLayer
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     base = Neuron(name="base")
-    hidden1 = NeuronLayer('L1', 3)
-    hidden2 = NeuronLayer('L2', 4)
+    hidden1 = NeuronLayer("L1", 3)
+    hidden2 = NeuronLayer("L2", 4)
     out = Neuron(name="out")
 
     base.connect_to(hidden1)

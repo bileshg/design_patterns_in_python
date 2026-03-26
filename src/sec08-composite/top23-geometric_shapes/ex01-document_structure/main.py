@@ -1,5 +1,4 @@
-from components import Section, Paragraph, TextElement
-
+from components import Paragraph, Section, TextElement
 
 if __name__ == "__main__":
     # Create a document structure

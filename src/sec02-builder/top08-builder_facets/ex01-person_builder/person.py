@@ -3,14 +3,16 @@ class Person:
 
     def __init__(self):
         print("Creating an instance of Person")
+
         # address
-        self.street_address = None
-        self.postcode = None
-        self.city = None
+        self.street_address: str | None = None
+        self.postcode: str | None = None
+        self.city: str | None = None
+
         # employment info
-        self.company_name = None
-        self.position = None
-        self.annual_income = None
+        self.company_name: str | None = None
+        self.position: str | None = None
+        self.annual_income: str | int | None = None
 
     def __str__(self) -> str:
         """Custom string representation for prettiness"""

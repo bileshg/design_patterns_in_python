@@ -1,5 +1,5 @@
-from i_mediator import IMediator
-from i_participants import IParticipant
+from .i_mediator import IMediator
+from .i_participants import IParticipant
 
 
 class Participant(IParticipant):

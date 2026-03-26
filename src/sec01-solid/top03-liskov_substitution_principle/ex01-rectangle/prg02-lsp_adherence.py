@@ -7,7 +7,7 @@ class Shape(ABC):
     @abstractmethod
     def area(self):
         """Calculate the area of a shape"""
-        pass
+        raise NotImplementedError
 
 
 class Rectangle(Shape):

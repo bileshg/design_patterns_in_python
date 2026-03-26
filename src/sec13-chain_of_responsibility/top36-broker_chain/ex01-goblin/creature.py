@@ -1,12 +1,13 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Creature(metaclass=ABCMeta):
+class Creature(ABC):
+    @property
+    @abstractmethod
+    def attack(self):
+        raise NotImplementedError
 
     @property
     @abstractmethod
-    def attack(self): ...
-
-    @property
-    @abstractmethod
-    def defense(self): ...
+    def defense(self):
+        raise NotImplementedError

@@ -1,4 +1,4 @@
-from builder_meta import BuilderMeta
+from .builder_meta import BuilderMeta
 
 
 class AppConfig:

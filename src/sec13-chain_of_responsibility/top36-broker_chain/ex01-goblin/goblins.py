@@ -1,5 +1,5 @@
-from creature import Creature
-from game import Game
+from .creature import Creature
+from .game import Game
 
 
 class Goblin(Creature):

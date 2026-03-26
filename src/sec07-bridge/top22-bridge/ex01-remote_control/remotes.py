@@ -1,17 +1,17 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Remote(metaclass=ABCMeta):
+class Remote(ABC):
     def __init__(self, device):
         self._device = device
 
     @abstractmethod
     def power(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def set_channel(self, channel):
-        pass
+        raise NotImplementedError
 
 
 class BasicRemote(Remote):

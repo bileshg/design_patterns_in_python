@@ -1,5 +1,5 @@
-from devices import TV, Radio
-from remotes import AdvancedRemote, BasicRemote
+from .devices import TV, Radio
+from .remotes import AdvancedRemote, BasicRemote
 
 if __name__ == "__main__":
     # Using Basic Remote with TV

@@ -1,5 +1,5 @@
-from game import Game
-from goblins import Goblin, GoblinKing
+from .game import Game
+from .goblins import Goblin, GoblinKing
 
 if __name__ == "__main__":
     gob_game = Game()

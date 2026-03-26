@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from enum import Enum
-from typing import Iterator, Self
+from typing import Any, Iterator
 
 
 class Person:
@@ -12,7 +12,7 @@ class Person:
     def __str__(self) -> str:
         return self.name
 
-    def __eq__(self, value: Self) -> bool:
+    def __eq__(self, value: Any) -> bool:
         return self.name == value.name
 
 

@@ -1,5 +1,5 @@
-from mediators import AdditionRoom
-from participants import Participant
+from .mediators import AdditionRoom
+from .participants import Participant
 
 if __name__ == "__main__":
     game = AdditionRoom()

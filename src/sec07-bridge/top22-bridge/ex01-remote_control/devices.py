@@ -1,24 +1,23 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Device(metaclass=ABCMeta):
-
+class Device(ABC):
     @property
     @abstractmethod
     def is_on(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def power_on(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def power_off(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def set_channel(self, channel):
-        pass
+        raise NotImplementedError
 
 
 class TV(Device):

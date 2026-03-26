@@ -1,4 +1,4 @@
-from square import Square
+from .square import Square
 
 
 class SquareToRectangleAdapter:
